@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Show modal window</title>
+  <style>
+  #modal {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    overflow: auto;
+    padding: 16px;
+    opacity: .8;
+    background-color: rgba(1, 1, 1, .95)
+  }
+  
+  .modal {
+    background: #fff;
+    width: 300px;
+    height: 300px;
+  }
+  
+  #window {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    width: 300px;
+    height: 400px;
+    margin: 250px auto;
+    padding: 16px
+  }
+  
+  #window img {
+    position: absolute;
+    top: -30px;
+    right: -50px;
+    cursor: pointer
+  }
+  </style>
+</head>
+
+<body>
+  <button onclick="show('block')">Show modal window</button>
+  <div onclick="show('none')" id="modal"></div>
+  <div id="window"> <img onclick="show('none')" src="close.svg">
+    <div class="modal">
+    </div>
+  </div>
+  <script>
+  function show(state) {
+    document.getElementById('window').style.display = state;
+    document.getElementById('modal').style.display = state;
+  }
+  </script>
+</body>
+
+</html>
