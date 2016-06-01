@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Symbol Count</title>
+</head>
+<body>
+	<p id="info">Symbol Count: 25</p>
+	<textarea id="text" onclick="f()" onkeyup="f()"></textarea>
+	<script>
+		function f(){ // or f(count) then refactor 25 in count and onkeyup="f(25)"
+			var text = document.getElementById('text');
+			var content = text.value;
+			var lengths = content.length;
+			if (lengths > 25)
+				text.value = content.substr(0, 25);
+				var info = document.getElementById('info');
+				var total = 25 - lengths;
+				info.innerHTML = 'Symbol Count: ' + total + ' of the ' + 25;
+				if (lengths < 0)
+					lengths = 0; 
+		}
+	</script>
+</body>
+</html>
